@@ -1,6 +1,8 @@
-Flask
-flask-cors
-transformers
-torch
-gTTS
-gunicorn
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+pymysql
+langchain-community
+langchain-google-genai
+langchain-classic
