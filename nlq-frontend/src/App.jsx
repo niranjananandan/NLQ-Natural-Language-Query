@@ -61,7 +61,7 @@ function App() {
     setError("");
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/query", {
+      const response = await fetch("https://nlq-natural-language-query.onrender.com/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: finalQuestion }),
@@ -90,7 +90,7 @@ function App() {
 
   const fetchTableData = async (tableName) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/table-data/${tableName}`);
+      const response = await fetch(`https://nlq-natural-language-query.onrender.com/table-data/${tableName}`);
       const data = await response.json();
       if (data.status === "success") {
         setTableData((prev) => ({ ...prev, [tableName]: data.rows }));
@@ -103,7 +103,7 @@ function App() {
   const fetchSchema = async () => {
     setSchemaLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/schema");
+      const response = await fetch("https://nlq-natural-language-query.onrender.com/schema");
       const data = await response.json();
       if (data.status === "success") {
         setSchema(data.tables);
